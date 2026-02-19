@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { PlusCircle, Trash2, Wallet, History, Coins, PencilLine } from 'lucide-react';
+import { PlusCircle, Trash2, Wallet, History } from 'lucide-react';
 
 const App = () => {
   // 狀態管理
