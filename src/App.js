@@ -24,7 +24,10 @@ const App = () => {
     return saved ? Number(saved) : 0;
   });
   const [isBalanceSet, setIsBalanceSet] = useState(() => !!localStorage.getItem('min_balance'));
-  const [transactions, setTransactions] = useState([]);
+const [transactions, setTransactions] = useState(() => {
+  const saved = localStorage.getItem('soro_transactions');
+  return saved ? JSON.parse(saved) : [];
+});
   const [tempBalance, setTempBalance] = useState('');
   const [type, setType] = useState('expense');
   const [selectedIcon, setSelectedIcon] = useState('Utensils');
@@ -54,6 +57,10 @@ const App = () => {
       setSelectedIcon(firstIcon);
     }
   }, [type, editingItem]);
+
+  useEffect(() => {
+  localStorage.setItem('soro_transactions', JSON.stringify(transactions));
+}, [transactions]);
 
   useEffect(() => {
     const style = document.createElement('style');
