@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
-  PlusCircle, 
   Trash2, 
   Wallet, 
   History, 
