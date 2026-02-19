@@ -247,7 +247,7 @@ const App = () => {
         <div className="modal-overlay" onClick={() => setEditingItem(null)}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-              <h2 style={{ fontSize: '24px', fontWeight: '950', margin: 0 }}>編輯紀錄</h2>
+              <h2 style={{ fontSize: '24px', fontWeight: '950', margin: 0 }}>編輯</h2>
               <button onClick={() => setEditingItem(null)} style={{ border: 'none', background: '#f8fafc', padding: '8px', borderRadius: '50%', cursor: 'pointer' }}><X size={20}/></button>
             </div>
             
@@ -271,7 +271,7 @@ const App = () => {
               </div>
               <input type="text" style={{ padding: '18px', backgroundColor: '#f8fafc', border: 'none', borderRadius: '20px', fontSize: '16px', fontWeight: '700', outline: 'none' }} value={editingItem.note} onChange={(e) => setEditingItem({...editingItem, note: e.target.value})} />
               <input type="number" style={{ padding: '18px', backgroundColor: '#f8fafc', border: 'none', borderRadius: '20px', fontSize: '16px', fontWeight: '900', outline: 'none' }} value={editingItem.amount} onChange={(e) => setEditingItem({...editingItem, amount: e.target.value})} />
-              <button type="submit" className="submit-btn" style={{ padding: '20px', backgroundColor: '#0f172a', color: 'white', border: 'none', borderRadius: '20px', fontWeight: '950', fontSize: '18px', cursor: 'pointer', marginTop: '8px' }}>確認修改</button>
+              <button type="submit" className="submit-btn" style={{ padding: '20px', backgroundColor: '#0f172a', color: 'white', border: 'none', borderRadius: '20px', fontWeight: '950', fontSize: '18px', cursor: 'pointer', marginTop: '8px' }}>確認</button>
             </form>
           </div>
         </div>
@@ -279,13 +279,13 @@ const App = () => {
 
       <div style={{ padding: '50px 24px 30px', textAlign: 'center' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: '#f1f5f9', padding: '6px 14px', borderRadius: '100px', marginBottom: '12px' }}>
-          <span style={{ fontSize: '12px', fontWeight: '800', color: '#64748b', letterSpacing: '1px' }}>WALLETS BALANCE</span>
+          <span style={{ fontSize: '12px', fontWeight: '800', color: '#64748b', letterSpacing: '1px' }}>Soro</span>
         </div>
         <h1 style={{ fontSize: '56px', fontWeight: '950', margin: '0', color: currentBalance < 0 ? '#ef4444' : '#0f172a', letterSpacing: '-2px', transition: 'color 0.4s ease' }}>
           ${currentBalance.toLocaleString()}
         </h1>
         <button onClick={() => setIsBalanceSet(false)} style={{ marginTop: '16px', color: '#cbd5e1', fontSize: '12px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px', margin: '16px auto' }}>
-          <Pencil size={12} /> 編輯本金
+          <Pencil size={12} /> 編輯
         </button>
       </div>
 
@@ -320,7 +320,7 @@ const App = () => {
               ))}
             </div>
 
-            <input type="text" placeholder="這一筆紀錄是什麼？" style={{ padding: '20px', backgroundColor: '#f8fafc', border: 'none', borderRadius: '22px', fontSize: '16px', fontWeight: '700', outline: 'none' }} value={formData.note} onChange={(e) => setFormData({...formData, note: e.target.value})} />
+            <input type="text" placeholder="名字" style={{ padding: '20px', backgroundColor: '#f8fafc', border: 'none', borderRadius: '22px', fontSize: '16px', fontWeight: '700', outline: 'none' }} value={formData.note} onChange={(e) => setFormData({...formData, note: e.target.value})} />
             <input type="number" inputMode="decimal" placeholder="金額" style={{ padding: '20px', backgroundColor: '#f8fafc', border: 'none', borderRadius: '22px', fontSize: '16px', fontWeight: '900', outline: 'none' }} value={formData.amount} onChange={(e) => setFormData({...formData, amount: e.target.value})} />
             <button type="submit" className="submit-btn" style={{ padding: '22px', backgroundColor: '#0f172a', color: 'white', border: 'none', borderRadius: '22px', fontWeight: '950', fontSize: '18px', cursor: 'pointer', marginTop: '6px' }}>記一筆</button>
           </form>
@@ -328,7 +328,7 @@ const App = () => {
 
         <section>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', padding: '0 10px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '950', color: '#1e293b', margin: 0 }}>最近明細</h3>
+            <h3 style={{ fontSize: '18px', fontWeight: '950', color: '#1e293b', margin: 0 }}>紀錄</h3>
             <History size={18} color="#cbd5e1" />
           </div>
           
