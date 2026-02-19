@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { PlusCircle, Trash2, Wallet, History, Coins, PencilLine } from 'lucide-react';
 
 const App = () => {
