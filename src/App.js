@@ -1,22 +1,31 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; // 移除 useRef
 import { 
+  DndContext, 
+  closestCenter, 
+  KeyboardSensor, 
+  PointerSensor, 
+  useSensor, 
+  useSensors,
+  DragOverlay
+} from '@dnd-kit/core';
+import { 
+  arrayMove, 
+  SortableContext, 
+  sortableKeyboardCoordinates, 
+  verticalListSortingStrategy,
+  useSortable
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import { 
+  GripVertical, 
   Trash2, 
-  Wallet, 
-  History, 
-  Pencil, 
-  Utensils, 
-  Car, 
-  ShoppingBag, 
-  Gamepad2, 
-  MoreHorizontal,
-  Landmark,
-  Gift,
-  ArrowUpCircle,
-  ArrowDownCircle,
-  Search,
-  X
-} from 'lucide-react';
+  Edit3,
+  Clock, 
+  AlertTriangle,
+  RefreshCw
+} from 'lucide-react'; // 只保留實際有渲染的圖示
+
+// --- 以下保持不變 ---
 
 const App = () => {
   const [initialBalance, setInitialBalance] = useState(() => {
@@ -29,7 +38,7 @@ const [transactions, setTransactions] = useState(() => {
   return saved ? JSON.parse(saved) : [];
 });
   const [tempBalance, setTempBalance] = useState('');
-  const [type, setType] = useState('expense');
+  const [输入, setType] = useState('expense');
   const [selectedIcon, setSelectedIcon] = useState('Utensils');
   const [formData, setFormData] = useState({ amount: '', note: '' });
   
