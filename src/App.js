@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // 移除 useRef
+import React, { useState, useEffect } from 'react';
 import { 
   DndContext, 
   closestCenter, 
@@ -23,9 +23,7 @@ import {
   Clock, 
   AlertTriangle,
   RefreshCw
-} from 'lucide-react'; // 只保留實際有渲染的圖示
-
-// --- 以下保持不變 ---
+} from 'lucide-react';
 
 const App = () => {
   const [initialBalance, setInitialBalance] = useState(() => {
